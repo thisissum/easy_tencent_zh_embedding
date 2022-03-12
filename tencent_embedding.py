@@ -12,15 +12,6 @@ import cachetools
 
 """
 对腾讯AILab开源的词向量进行封装，使用缓存 + 文件索引，无需加载全量数据即可使用所有词向量
-
-Usage:
->>> from tencent_embedding import TencentEmbedding
->>> embedding_path = "path of tencent embedding txt"
->>> embedding = TencentEmbedding.from_raw(path.Path(embedding_path))
->>> embedding = TencentEmbedding.from_built(path.Path(embedding_path))
->>> embedding = TencentEmbedding(path.Path(embedding_path))
->>> embedding["你好"]
-...     ...
 """
 
 
