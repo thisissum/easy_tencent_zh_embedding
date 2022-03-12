@@ -187,3 +187,28 @@ class TencentEmbedding(object):
 
     def __del__(self):
         self._fp.close()
+
+
+if __name__ == "__main__":
+    # from raw file
+    embedding_file_path = path.Path("./raw/tencent-ailab-embedding-zh-d200-v0.2.0.txt")
+    # 1. build index
+    TencentEmbedding.build_index(embedding_file_path)
+    # 2. load index
+    embedding = TencentEmbedding.from_built(embedding_file_path)
+    # 3. get word embedding
+    word = "太阳"
+    arr = embedding[word]
+    print("{}: ".format(word))
+    print(arr)
+
+    # or from built index
+    # 1. load index
+    embedding = TencentEmbedding.from_built(embedding_file_path)
+    # 2. get word embedding
+    word = "太阳"
+    arr = embedding[word]
+    print("{}: ".format(word))
+    print(arr)
+
+
